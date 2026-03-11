@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>Windows安全中心彻底关闭 | SilentRequiemLIX</title>
+<meta name="description" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://silentrequiemlix.github.io/favicon.ico?v=1773231233757">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://silentrequiemlix.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://silentrequiemlix.github.io">
+        <img class="avatar" src="https://silentrequiemlix.github.io/images/avatar.png?v=1773231233757" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://silentrequiemlix.github.io">
+        <h1 class="site-title">SilentRequiemLIX</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://silentrequiemlix.github.io" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://silentrequiemlix.github.io/post/1" class="menu purple-link">
+            个人社交网站
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">Windows安全中心彻底关闭</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2026-03-11</span>
+            
+          </div>
+          <div class="post-content" v-pre>
+            <p>新建一个txt文件，输入以下内容：</p>
+<pre><code>Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender]
+&quot;DisableAntiSpyware&quot;=dword:00000001
+&quot;DisableRealtimeMonitoring&quot;=dword:00000001
+&quot;DisableAntiVirus&quot;=dword:00000001
+&quot;DisableSpecialRunningModes&quot;=dword:00000001
+&quot;DisableRoutinelyTakingAction&quot;=dword:00000001
+&quot;ServiceKeepAlive&quot;=dword:00000001
+
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection]
+&quot;DisableBehaviorMonitoring&quot;=dword:00000001
+&quot;DisableOnAccessProtection&quot;=dword:00000001
+&quot;DisableRealtimeMonitoring&quot;=dword:00000001
+&quot;DisableScanOnRealtimeEnable&quot;=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Signature Updates]
+&quot;ForceUpdateFromMU&quot;=dword:00000001
+
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Spynet]
+&quot;DisableBlockAtFirstSeen&quot;=dword:00000001
+</code></pre>
+<p>保存，后缀修改为reg，然后双击运行，在弹出的警告点是就行</p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://silentrequiemlix.github.io/post/8/">
+              <h3 class="post-title">
+                下一篇：彻底移除copilot教程
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan"></div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  2026 | <a class="rss" href="https://silentrequiemlix.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

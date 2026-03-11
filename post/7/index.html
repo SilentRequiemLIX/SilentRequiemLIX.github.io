@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>荣耀手机利用ADB全局锁120教学 | SilentRequiemLIX</title>
+<meta name="description" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://silentrequiemlix.github.io/favicon.ico?v=1773231233757">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://silentrequiemlix.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://silentrequiemlix.github.io">
+        <img class="avatar" src="https://silentrequiemlix.github.io/images/avatar.png?v=1773231233757" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://silentrequiemlix.github.io">
+        <h1 class="site-title">SilentRequiemLIX</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://silentrequiemlix.github.io" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://silentrequiemlix.github.io/post/1" class="menu purple-link">
+            个人社交网站
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">荣耀手机利用ADB全局锁120教学</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2026-03-09</span>
+            
+          </div>
+          <div class="post-content" v-pre>
+            <p>打开CMD，键入如下命令：</p>
+<pre><code>adb shell service call package 数字 s16 com.hihonor.android.hnaps i32 0 i32 0
+</code></pre>
+<p>上方命令中数字的获取：<br>
+安装MT管理器<br>
+定位到/system/framework<br>
+找到framework.jar文件<br>
+打开jar，选中所有dex文件，用dex编辑器++打开<br>
+点击搜索，发起新搜索，搜索以下内容</p>
+<pre><code>transaction_setsystemappinstall
+</code></pre>
+<p>点击唯一一个结果，找到结果旁边的十六进制值<br>
+将十六进制值转换成十进制就是上方命令所需要的数字了<br>
+如果要恢复，只需要执行</p>
+<pre><code>adb shell service call package 数字 s16 com.hihonor.android.hnaps i32 1 i32 0
+</code></pre>
+<p>以上只是第一个命令</p>
+<pre><code>adb shell settings put system peak_refresh_rate 你手机最大的刷新率
+</code></pre>
+<p>这一条命令是将你手机帧率设置为你想要的刷新率</p>
+<pre><code>adb shell settings put system min_refresh_rate 你手机最大的刷新率
+</code></pre>
+<p>这一条命令是将你手机最低刷新率改成你想要的刷新率</p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://silentrequiemlix.github.io/post/6/">
+              <h3 class="post-title">
+                下一篇：Windows激活指令
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan"></div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  2026 | <a class="rss" href="https://silentrequiemlix.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

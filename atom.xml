@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://silentrequiemlix.github.io</id>
+    <title>SilentRequiemLIX</title>
+    <updated>2026-03-11T12:13:56.395Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://silentrequiemlix.github.io"/>
+    <link rel="self" href="https://silentrequiemlix.github.io/atom.xml"/>
+    <logo>https://silentrequiemlix.github.io/images/avatar.png</logo>
+    <icon>https://silentrequiemlix.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2026, SilentRequiemLIX</rights>
+    <entry>
+        <title type="html"><![CDATA[Windows启用Administrator账户（建议刚装完系统时操作）]]></title>
+        <id>https://silentrequiemlix.github.io/post/10/</id>
+        <link href="https://silentrequiemlix.github.io/post/10/">
+        </link>
+        <updated>2026-03-11T12:04:29.000Z</updated>
+        <content type="html"><![CDATA[<p>步骤1：按Windows+R键，打开运行窗口，键入以下命令：</p>
+<pre><code>lusrmgr.msc
+</code></pre>
+<p>步骤2：在弹出的窗口中，双击“用户”，然后双击“Administrator”，将账户已禁用取消打勾即可，按应用确定按返回<br>
+步骤3：返回桌面。按alt+F4键，弹出的窗口下拉选择注销。然后在Windows登陆界面选择Administrator账户即可，然后把原来的账户删了就行</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Windows安全中心彻底关闭]]></title>
+        <id>https://silentrequiemlix.github.io/post/9/</id>
+        <link href="https://silentrequiemlix.github.io/post/9/">
+        </link>
+        <updated>2026-03-11T12:00:02.000Z</updated>
+        <content type="html"><![CDATA[<p>新建一个txt文件，输入以下内容：</p>
+<pre><code>Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender]
+&quot;DisableAntiSpyware&quot;=dword:00000001
+&quot;DisableRealtimeMonitoring&quot;=dword:00000001
+&quot;DisableAntiVirus&quot;=dword:00000001
+&quot;DisableSpecialRunningModes&quot;=dword:00000001
+&quot;DisableRoutinelyTakingAction&quot;=dword:00000001
+&quot;ServiceKeepAlive&quot;=dword:00000001
+
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection]
+&quot;DisableBehaviorMonitoring&quot;=dword:00000001
+&quot;DisableOnAccessProtection&quot;=dword:00000001
+&quot;DisableRealtimeMonitoring&quot;=dword:00000001
+&quot;DisableScanOnRealtimeEnable&quot;=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Signature Updates]
+&quot;ForceUpdateFromMU&quot;=dword:00000001
+
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Spynet]
+&quot;DisableBlockAtFirstSeen&quot;=dword:00000001
+</code></pre>
+<p>保存，后缀修改为reg，然后双击运行，在弹出的警告点是就行</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[彻底移除copilot教程]]></title>
+        <id>https://silentrequiemlix.github.io/post/8/</id>
+        <link href="https://silentrequiemlix.github.io/post/8/">
+        </link>
+        <updated>2026-03-11T11:56:38.000Z</updated>
+        <content type="html"><![CDATA[<p>步骤1：管理员运行powershell，键入以下指令</p>
+<pre><code>&amp; ([scriptblock]::Create((irm &quot;https://raw.githubusercontent.com/zoicware/RemoveWindowsAI/main/RemoveWindowsAi.ps1&quot;)))
+</code></pre>
+<p>步骤2：在弹出的窗口按一下apply就行，完成之后弹出的窗口按yes重启即可</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[荣耀手机利用ADB全局锁120教学]]></title>
+        <id>https://silentrequiemlix.github.io/post/7/</id>
+        <link href="https://silentrequiemlix.github.io/post/7/">
+        </link>
+        <updated>2026-03-09T01:41:06.000Z</updated>
+        <content type="html"><![CDATA[<p>打开CMD，键入如下命令：</p>
+<pre><code>adb shell service call package 数字 s16 com.hihonor.android.hnaps i32 0 i32 0
+</code></pre>
+<p>上方命令中数字的获取：<br>
+安装MT管理器<br>
+定位到/system/framework<br>
+找到framework.jar文件<br>
+打开jar，选中所有dex文件，用dex编辑器++打开<br>
+点击搜索，发起新搜索，搜索以下内容</p>
+<pre><code>transaction_setsystemappinstall
+</code></pre>
+<p>点击唯一一个结果，找到结果旁边的十六进制值<br>
+将十六进制值转换成十进制就是上方命令所需要的数字了<br>
+如果要恢复，只需要执行</p>
+<pre><code>adb shell service call package 数字 s16 com.hihonor.android.hnaps i32 1 i32 0
+</code></pre>
+<p>以上只是第一个命令</p>
+<pre><code>adb shell settings put system peak_refresh_rate 你手机最大的刷新率
+</code></pre>
+<p>这一条命令是将你手机帧率设置为你想要的刷新率</p>
+<pre><code>adb shell settings put system min_refresh_rate 你手机最大的刷新率
+</code></pre>
+<p>这一条命令是将你手机最低刷新率改成你想要的刷新率</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Windows激活指令]]></title>
+        <id>https://silentrequiemlix.github.io/post/6/</id>
+        <link href="https://silentrequiemlix.github.io/post/6/">
+        </link>
+        <updated>2026-02-14T11:53:45.000Z</updated>
+        <content type="html"><![CDATA[<pre><code>irm https://get.activated.win | iex
+</code></pre>
+<p>注意：此方法需要全程连接英特网<br>
+按住Windows键+X键，选择终端管理员，在打开的窗口中键入上面的代码，你也可以选择复制</p>
+<p>等待若干秒，弹出以下窗口<br>
+<img src="https://silentrequiemlix.github.io/post-images/1771070495139.png" alt="" loading="lazy"><br>
+按下3键，弹出以下窗口<br>
+<img src="https://silentrequiemlix.github.io/post-images/1771070555114.png" alt="" loading="lazy"><br>
+按下1键，等待若干秒，出现Press any key to Go back...字样后即可关闭窗口<br>
+<img src="https://silentrequiemlix.github.io/post-images/1771070657740.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[代理订阅节点购买网站推荐]]></title>
+        <id>https://silentrequiemlix.github.io/post/5/</id>
+        <link href="https://silentrequiemlix.github.io/post/5/">
+        </link>
+        <updated>2026-02-14T11:46:22.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="极速机场"><a href="https://xn--mes358acgm99l.com/#/register?code=Psbeedn9" title="极速机场">极速机场</a></h1>
+<h1 id="维云云"><a href="https://vyy.idsduf.com/#/register?code=UlvxBcKP" title="维云云*">维云云*</a></h1>
+<p>PS：带*的说明此网站需要代理才能进</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[移动端汉化版Terraria下载]]></title>
+        <id>https://silentrequiemlix.github.io/post/4/</id>
+        <link href="https://silentrequiemlix.github.io/post/4/">
+        </link>
+        <updated>2026-01-30T05:34:02.000Z</updated>
+        <content type="html"><![CDATA[<p>🇨🇳<br>
+等待更新......</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[实用链接]]></title>
+        <id>https://silentrequiemlix.github.io/post/3/</id>
+        <link href="https://silentrequiemlix.github.io/post/3/">
+        </link>
+        <updated>2026-01-30T05:18:53.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="tedit"><a href="https://github.com/TEdit/Terraria-Map-Editor/releases" title="Tedit">Tedit</a></h1>
+<h1 id="terraria-wiki"><a href="https://terraria.wiki.gg/zh/wiki/Terraria_Wiki" title="Terraria Wiki">Terraria Wiki</a></h1>
+<h1 id="偏爱工具网"><a href="https://tool.pai.al/" title="偏爱工具网">偏爱工具网</a></h1>
+<h1 id="偏爱工具箱"><a href="https://tool2.pai.al/" title="偏爱工具箱">偏爱工具箱</a></h1>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Terraria正版购买指南]]></title>
+        <id>https://silentrequiemlix.github.io/post/2/</id>
+        <link href="https://silentrequiemlix.github.io/post/2/">
+        </link>
+        <updated>2026-01-30T05:03:59.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="以下是所有常用平台的正版购买链接">以下是所有常用平台的正版购买链接</h1>
+<h1 id="标记号的链接是身处中国大陆以外的购买链接如果您身处中国大陆请挂代理访问">标记*号的链接是身处中国大陆以外的购买链接，如果您身处中国大陆请挂代理访问</h1>
+<h2 id="电脑端">电脑端🖥</h2>
+<h2 id="steam"><a href="https://store.steampowered.com/app/105600/Terraria/" title="Steam">Steam</a></h2>
+<h2 id="gog-galaxy"><a href="https://gog.com/game/terraria" title="GOG Galaxy">GOG Galaxy</a></h2>
+<h2 id="主机端">主机端🕹</h2>
+<h2 id="playstation"><a href="https://playstation.com/games/terraria" title="PlayStation">PlayStation*</a></h2>
+<h2 id="nintendo-switch"><a href="https://ec.nintendo.com/HK/zh/titles/70010000023876" title="Nintendo Switch">Nintendo Switch*</a></h2>
+<h2 id="移动端">移动端📱</h2>
+<h2 id="google-play"><a href="https://play.google.com/store/apps/details?id=com.and.games505.TerrariaPaid" title="Google play">Google Play*</a></h2>
+<h2 id="amazon"><a href="https://www.amazon.com/d/B00G6ZTM3Y" title="Amazon">Amazon*</a></h2>
+<h2 id="app-store"><a href="https://apps.apple.com/us/app/terraria/id640364616?uo=4&amp;mt=8" title="App Store">App Store</a></h2>
+<h2 id="taptap"><a href="https://taptap.com/app/194610" title="TapTap">TapTap</a></h2>
+<h2 id="app-store-cn"><a href="https://apps.apple.com/cn/app/1157863540" title="App Store CN">App Store CN</a></h2>
+]]></content>
+    </entry>
+</feed>
